@@ -1,0 +1,41 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">  
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<h2>Flights Detail</h2>
+<table>
+<tr>
+<th>Airlines</th>
+<th>Departure City</th>
+<th>Arrival City</th>
+<th>Date</th>
+
+<th>Available</th>
+</tr>
+<tr th:each="flight: ${flights}">
+<td th:text="${flight.operatingAirlines}"/>
+<td th:text="${flight.departureCity}"/>
+<td th:text="${flight.arrivalCity}"/>
+<td th:text="${flight.dateOfDeparture}"/>
+<td>
+<span><a href="#">check</a></span>
+</td>
+<!-- <td><a th:href="@{showreservation/{flightId}(flightId=${flight.id})}">-Select</a></td> -->
+<td><a th:href="@{/showreservation(flightId=${flight.id})}">-Select</a></td>
+
+
+<!--  @{/resetPassword(email=${email})}"-->
+</tr>
+
+
+
+
+
+</table>
+</body>
+</html>
+
+
